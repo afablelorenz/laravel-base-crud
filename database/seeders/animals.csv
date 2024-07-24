@@ -1,0 +1,6 @@
+name,scientific_name,taxonomic_group,class,family,species,habitat,protected,date_of_arrival
+Lionel,Panthera leo,Mammalia,Carnivora,Felidae,P. leo,Savannah,1,2023-01-15
+Ella,Loxodonta africana,Mammalia,Proboscidea,Elephantidae,L. africana,Forest,1,2022-10-05
+Gerry,Giraffa camelopardalis,Mammalia,Artiodactyla,Giraffidae,G. camelopardalis,Savannah,0,2021-06-21
+Barry,Ursus arctos,Mammalia,Carnivora,Ursidae,U. arctos,Mountain,1,2022-04-11
+Polly,Amazona aestiva,Aves,Psittaciformes,Psittacidae,A. aestiva,Forest,0,2023-02-27
