@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[AnimalController::class, 'index'])->name('pages.home');
-
+Route::post('/',[AnimalController::class, 'store'])->name('pages.store');
+Route::get('/create',[AnimalController::class, 'create'])->name('pages.create');
 Route::get('/animals/{animal}',[AnimalController::class, 'show'])->name('pages.show');

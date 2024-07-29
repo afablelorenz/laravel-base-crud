@@ -14,6 +14,7 @@
             </tr>
         </thead>
         <tbody>
+
             @foreach ($animals as $animal)
                 <tr>
                     <th>{{$animal->id}}</th>
@@ -26,6 +27,7 @@
 
                 </tr>
             @endforeach
+            <a href="{{ route('pages.create', $animal) }}" role="button">Create</a>
         </tbody>
     </table>
 @endsection
