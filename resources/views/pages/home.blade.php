@@ -6,6 +6,7 @@
     <h1>
         Animal Reserve
     </h1>
+    <a href="{{ route('pages.create') }}" role="button">Create</a>
     <table>
         <thead>
             <tr>
@@ -20,14 +21,20 @@
                     <th>{{$animal->id}}</th>
                     <td>
                         {{$animal->name}}
+                    </td>
+                    <td>
                         <a href="{{ route('pages.show', $animal) }}" role="button">Show</a>
-                        <a href="#" role="button">Delete</a>
+                        <a href="{{ route('pages.edit', $animal) }}" role="button">Edit</a>
+                        <form action="{{ route('pages.destroy', $animal) }}" method="POST" style="display:inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" role="button">Delete</button>
+                        </form>
                     </td>
 
 
                 </tr>
             @endforeach
-            <a href="{{ route('pages.create', $animal) }}" role="button">Create</a>
         </tbody>
     </table>
 @endsection

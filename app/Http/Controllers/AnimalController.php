@@ -30,7 +30,20 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:60',
+            'scientific_name' => 'required|string|max:60',
+            'taxonomic_group' => 'required|string|max:60',
+            'class' => 'required|string|max:40',
+            'family' => 'required|string|max:40',
+            'species' => 'required|string|max:40',
+            'habitat' => 'required|string|max:40',
+            'protected' => 'required|boolean',
+            'date_of_arrival' => 'required|date',
+        ]);
+
+        Animal::create($validatedData);
+        return redirect()->route('pages.home');
     }
 
     /**
@@ -46,7 +59,7 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        //
+        return view('pages.edit', compact('animal'));
     }
 
     /**
@@ -54,7 +67,20 @@ class AnimalController extends Controller
      */
     public function update(Request $request, Animal $animal)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:60',
+            'scientific_name' => 'required|string|max:60',
+            'taxonomic_group' => 'required|string|max:60',
+            'class' => 'required|string|max:40',
+            'family' => 'required|string|max:40',
+            'species' => 'required|string|max:40',
+            'habitat' => 'required|string|max:40',
+            'protected' => 'required|boolean',
+            'date_of_arrival' => 'required|date',
+        ]);
+
+        $animal->update($validatedData);
+        return redirect()->route('pages.home');
     }
 
     /**
@@ -62,6 +88,7 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        //
+        $animal->delete();
+        return redirect()->route('pages.home');
     }
 }
